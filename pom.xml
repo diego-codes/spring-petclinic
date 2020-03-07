@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>edu.depaul.cdm.se441</groupId>
+  <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
   <version>2.2.0.BUILD-SNAPSHOT</version>
 
@@ -58,12 +57,12 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
-        <exclusions>
-            <exclusion>
-                <groupId>org.junit.vintage</groupId>
-                <artifactId>junit-vintage-engine</artifactId>
-            </exclusion>
-        </exclusions>
+      <exclusions>
+        <exclusion>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <!-- Databases - Uses HSQL by default -->
@@ -222,7 +221,7 @@
 
       <!-- Spring Boot Actuator displays build-related information if a git.properties
         file is present at the classpath -->
-      <plugin>
+      <!-- <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
         <executions>
@@ -240,7 +239,7 @@
           </generateGitPropertiesFilename>
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
         </configuration>
-      </plugin>
+      </plugin> -->
 
       <plugin>
         <groupId>ro.isdc.wro4j</groupId>
@@ -273,6 +272,21 @@
             <version>${mockito.version}</version>
           </dependency>
         </dependencies>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

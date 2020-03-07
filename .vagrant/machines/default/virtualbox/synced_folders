@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/Users/diegohernandez/Documents/school/SE-441/hw5/spring-petclinic","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
